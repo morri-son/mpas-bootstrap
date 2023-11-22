@@ -1,0 +1,28 @@
+---
+apiVersion: mpas.ocm.software/v1alpha1
+kind: Project
+metadata:
+  name: podinfo-application
+  namespace: mpas-system
+spec:
+  flux:
+    interval: 5m0s
+  git:
+    commitTemplate:
+      email: gerald.morrison@sap.com
+      message: xxx
+      name: mpas-admin
+    credentials:
+      secretRef:
+        name: github-access
+    defaultBranch: main
+    existingRepositoryPolicy: fail
+    interval: 5m0s
+    isOrganization: false
+    maintainers:
+    - morri-son
+    owner: morri-son
+    provider: github
+    visibility: public
+  interval: 5m0s
+  prune: true
